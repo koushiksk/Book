@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form action="/Add" enctype="multipart/form-data" method="POST">
+            <div class="input-section">
+                <input type="text" name="name" required>
+                <label>Name</label>
+            </div>
+             
+            <div class="input-section">
+                <label>Category</label>
+                <input type="text" name="category" required>
+            </div>
+            <div class="input-section">
+                <label>Description</label>
+                <input type="text" name="description" >
+            </div>
+            <div class="input-section">
+                <label>Price</label>
+                <input type="text" name="price" required>
+            </div>
+            <img src="" style="width: 100px;" id="prodimage1">
+             <div class="input-section">
+                <label>Image 1</label>
+                <input type="file" name="image" onchange="viewImage(event,'image1')" required>
+            </div>
+             
+            <input type="submit" value="Add">
+        </form>
+</body>
+</html>

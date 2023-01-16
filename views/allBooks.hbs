@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="color: indigo;">
+        {{mssg}}
+    </h1>
+<br>
+    <br>
+    {{#if products}}
+<div class="container">
+  {{#each products}}
+  <div class="card-container">
+    <div class="card-content">
+      <h1 data-aos="fade-left">
+        {{this.name}}
+      </h1>
+      <p data-aos="fade-right">
+        {{this.category}}
+      </p>
+      <p data-aos="fade-down">
+        Rs.
+        {{this.price}}
+      </p>
+      <button onclick="addToCart('{{this._id}}','{{this.name}}')" data-aos="zoom-in-up">
+        Add to Cart
+      </button>
+      <div class="variants">
+        <img onclick="changeImage('{{this.image1}}','{{this._id}}')"
+          src="./images/product-images/{{this.image1}}{{this._id}}.jpg" data-aos="fade-down">
+       </div>
+    </div>
+    <div class="img-container" data-aos="fade-up">
+      <img id="{{this._id}}" src="./images/product-images/{{this.image1}}{{this._id}}.jpg" />
+    </div>
+  </div>
+  {{/each}}
+</div>
+{{else}}
+<div class="empty">
+    <h1>
+        No Products Found
+    </h1>
+</div>
+{{/if}}
+</body>
+</html>
